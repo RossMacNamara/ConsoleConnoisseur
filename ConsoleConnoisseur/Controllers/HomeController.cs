@@ -10,9 +10,17 @@ namespace ConsoleConnoisseur.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IConsoleRepository _consoleRepository;
+
+        public HomeController(IConsoleRepository consoleRepository)
+        {
+            _consoleRepository = consoleRepository;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            var consoles = _consoleRepository.GetAllConsoles().OrderBy(c => c.Name);
+            return View(consoles);
         }
 
         public IActionResult Privacy()

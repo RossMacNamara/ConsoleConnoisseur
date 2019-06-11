@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleConnoisseur.Models
 {
-    interface IConsoleRepository
+    public interface IConsoleRepository
     {
         IEnumerable<Console> GetAllConsoles();
         Console GetConsoleById(int consoleId);
