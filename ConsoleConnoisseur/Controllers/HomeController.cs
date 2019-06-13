@@ -23,6 +23,16 @@ namespace ConsoleConnoisseur.Controllers
             return View(consoles);
         }
 
+        public IActionResult ViewDetails(int id)
+        {
+            var console = _consoleRepository.GetConsoleById(id);
+            if (console == null)
+            {
+                return NotFound();
+            }
+            return View(console);
+        }
+
         public IActionResult Privacy()
         {
             return View();

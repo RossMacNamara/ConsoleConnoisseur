@@ -8,11 +8,11 @@
 <div class="container">
     <div class="row">
         <p>
-            @foreach (var item in Model)
+            @foreach (ConsoleConnoisseur.Models.Console item in Model)
             {
                 <div class="col-sm-4 col-lg-4 col-md-4">
                     <h5>
-                        @Html.DisplayFor(modelItem => item.Name)
+                        <a asp-route="Home/ViewFullDetails/@item.Id"> @Html.DisplayFor(modelItem => item.Name)</a>
                     </h5>
 
 

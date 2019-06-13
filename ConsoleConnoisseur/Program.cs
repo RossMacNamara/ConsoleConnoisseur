@@ -27,9 +27,9 @@ namespace ConsoleConnoisseur
                     var context = services.GetRequiredService<AppDbContext>();                   
                     DbInitializer.Seed(context);
                 }
-                catch (Exception ex)
+                catch (Exception e)
                 {
-                    
+                        e.ToString();
                 }
             }
             host.Run();
