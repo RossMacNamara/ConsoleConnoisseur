@@ -12,7 +12,7 @@
             {
                 <div class="col-sm-4 col-lg-4 col-md-4">
                     <h5>
-                        <a asp-route="Home/ViewFullDetails/@item.Id"> @Html.DisplayFor(modelItem => item.Name)</a>
+                        <a asp-controller="Home" asp-action="ViewDetails" asp-route-id="@item.Id"> @Html.DisplayFor(modelItem => item.Name)</a>
                     </h5>
 
 
