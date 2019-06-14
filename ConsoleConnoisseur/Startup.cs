@@ -34,6 +34,7 @@ namespace ConsoleConnoisseur
             });
 
             services.AddTransient<IConsoleRepository, DBConsoleService>();
+            services.AddTransient<IResponseRepository, ResponseService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);       
 
