@@ -10,14 +10,21 @@ namespace ConsoleConnoisseur.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IResponseRepository _responseRepository;
+
         private readonly IConsoleRepository _consoleRepository;
 
-        public HomeController(IConsoleRepository consoleRepository)
+        private readonly ICommentRepository _commentRepository;
+
+        public HomeController(IConsoleRepository consoleRepository, IResponseRepository responseRepository, ICommentRepository commentRepository)
         {
             _consoleRepository = consoleRepository;
-        }
+            _responseRepository = responseRepository;
+            _commentRepository = commentRepository;
 
-        public IActionResult Index()
+    }
+
+    public IActionResult Index()
         {
             var consoles = _consoleRepository.GetAllConsoles().OrderBy(c => c.Name);
             return View(consoles);
@@ -25,6 +32,9 @@ namespace ConsoleConnoisseur.Controllers
 
         public IActionResult ViewDetails(int id)
         {
+            var comments = _commentRepository.GetComments();
+            ViewBag.Comments = comments;
+
             var console = _consoleRepository.GetConsoleById(id);
             if (console == null)
             {

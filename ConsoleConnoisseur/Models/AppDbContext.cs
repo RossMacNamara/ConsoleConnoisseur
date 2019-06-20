@@ -18,5 +18,7 @@ namespace ConsoleConnoisseur.Models
         public DbSet<Console> Consoles { get; set; }
 
         public DbSet<Response> Responses { get; set; }
+
+        public DbSet<Comment> Comments { get; set; }
     }
 }

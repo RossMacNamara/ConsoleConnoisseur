@@ -19,5 +19,10 @@ namespace ConsoleConnoisseur.Models
             _appDbContext.Responses.Add(response);
             _appDbContext.SaveChanges();
         }
+
+        public IEnumerable<Response> GetResponses()
+        {
+            return _appDbContext.Responses;
+        }
     }
 }

@@ -64,5 +64,13 @@ body {
 }
 
 tr, td, th {
-    border-color: black !important;
+    border-color: black;
+}
+
+#comments {
+    border: solid 1px;
+    background-color: white;
+    padding: 10px;
+    border-left: 20px solid #1a97c7;
+    color: #1a97c7;
 }

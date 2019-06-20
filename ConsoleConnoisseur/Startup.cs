@@ -42,6 +42,7 @@ namespace ConsoleConnoisseur
                 options.User.RequireUniqueEmail = true;
             });
 
+            services.AddTransient<ICommentRepository, DBCommentService>();
             services.AddTransient<IConsoleRepository, DBConsoleService>();
             services.AddTransient<IResponseRepository, ResponseService>();
 

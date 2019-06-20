@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleConnoisseur.Models
 {
-    public interface IResponseRepository
+    public interface ICommentRepository
     {
-        void AddResponse(Response response);
-        IEnumerable<Response> GetResponses();
+        void AddComment(Comment comment);
+        IEnumerable<Comment> GetComments();
     }
 }

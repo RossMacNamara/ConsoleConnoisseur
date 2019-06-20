@@ -69,5 +69,12 @@
             </td>
         </tr>
     </table>
+    <a asp-controller="Responses" asp-action="Create" class="btn btn-dark">Comment</a>
+    @*ViewBag.Responses.ToString()*@
+
+    @foreach (var response in ViewBag.Responses)
+    {
+        <p>@response.Name : <span>@response.Message</span></p>
+    }
 </div>
 
